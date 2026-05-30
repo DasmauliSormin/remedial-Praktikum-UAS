@@ -16,12 +16,8 @@
             <property name="jakarta.persistence.jdbc.url"      value="jdbc:h2:./parkit_db;DB_CLOSE_DELAY=-1"/>
             <property name="jakarta.persistence.jdbc.user"     value="sa"/>
             <property name="jakarta.persistence.jdbc.password" value=""/>
-
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <property name="hibernate.show_sql"     value="false"/>
-
-            <!-- Matikan semua log Hibernate -->
-            <property name="hibernate.session_factory_name_is_jndi" value="false"/>
+            <property name="hibernate.hbm2ddl.auto"            value="create"/>
+            <property name="hibernate.show_sql"                value="false"/>
         </properties>
     </persistence-unit>
 </persistence>

@@ -2,34 +2,24 @@ package pbo.f01.entity;
 
 import jakarta.persistence.*;
 
-/**
- * Entity: Kendaraan
- * Tabel: vehicle
- */
 @Entity
 @Table(name = "vehicle")
 public class Vehicle {
 
     @Id
     @Column(name = "plate_number", nullable = false, unique = true)
-    private String plateNumber;   // PRIMARY KEY — plat nomor unik
+    private String plateNumber;
 
     @Column(name = "owner", nullable = false)
-    private String owner;         // nama pemilik
+    private String owner;
 
     @Column(name = "type", nullable = false)
-    private String type;          // "car" atau "motorcycle"
+    private String type;
 
-    /**
-     * Relasi Many-to-One ke ParkingArea.
-     * FOREIGN KEY: parking_area_name -> parking_area.name
-     * nullable = true artinya kendaraan boleh belum diparkir di mana-mana.
-     */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parking_area_name", nullable = true)
     private ParkingArea parkingArea;
 
-    // --- Constructors ---
     public Vehicle() {}
 
     public Vehicle(String plateNumber, String owner, String type) {
@@ -38,16 +28,12 @@ public class Vehicle {
         this.type        = type;
     }
 
-    // --- Getters & Setters ---
     public String getPlateNumber()              { return plateNumber; }
     public void   setPlateNumber(String p)      { this.plateNumber = p; }
-
     public String getOwner()                    { return owner; }
     public void   setOwner(String owner)        { this.owner = owner; }
-
     public String getType()                     { return type; }
     public void   setType(String type)          { this.type = type; }
-
     public ParkingArea getParkingArea()         { return parkingArea; }
-    public void setParkingArea(ParkingArea pa)  { this.parkingArea = pa; }
+    public void   setParkingArea(ParkingArea pa){ this.parkingArea = pa; }
 }
