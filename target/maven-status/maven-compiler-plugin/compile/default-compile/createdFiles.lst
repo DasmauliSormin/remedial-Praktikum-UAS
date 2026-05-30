@@ -1,0 +1,6 @@
+pbo\f01\entity\ParkingArea.class
+pbo\f01\App.class
+pbo\f01\entity\Vehicle.class
+pbo\f01\repository\ParkingAreaRepository.class
+pbo\f01\repository\VehicleRepository.class
+pbo\f01\service\ParkingService.class
